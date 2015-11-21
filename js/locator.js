@@ -13,9 +13,12 @@
 var locator = {
     ui: null,
     dataProvider: null,
+    engine: null,
+
     initialize: function (args) {
         this.ui = args.ui;
         this.dataProvider = args.dataSource;
+        this.engine = args.searchEngine;
     },
     /**
      * Get the source of data for the application.
@@ -42,6 +45,15 @@ var locator = {
      */
     getUi: function () {
         return this.ui;
+    },
+    /**
+     * Get the engine used to build search queries
+     * based on user/repository data.
+     *
+     * @return {Object}
+     */
+    getEngine: function () {
+        return this.engine;
     }
 };
 

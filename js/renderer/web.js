@@ -30,5 +30,20 @@ var renderRepository = function (repository) {
     return util.format('<a href="%s">%s</a>', repository.html_url, repository.name);
 };
 
-module.exports.renderRepositoryList = renderRepositoryList;
-module.exports.renderRepository = renderRepository;
+/**
+ * Render data about a user's repositories.
+ *
+ * @param {array} repositories
+ * @return {string}
+ */
+var renderUserData = function (repositories) {
+    return util.format(
+        'Repositories: %d; Languages Used: %s',
+        repositories.length,
+        repositories.map(function (repo) { return repo.language; }).join(', ')
+    );
+};
+
+exports.renderRepositoryList = renderRepositoryList;
+exports.renderRepository = renderRepository;
+exports.renderUserData = renderUserData;

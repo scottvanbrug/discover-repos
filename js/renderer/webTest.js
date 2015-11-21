@@ -6,9 +6,9 @@
 var expect = require('expect.js');
 var renderer = require('./web.js');
 
-var repoA = {'html_url': 'https://github.com/some/repo', 'name': 'some/repo'};
-var repoB = {'html_url': 'https://github.com/other/repo', 'name': 'other/repo'};
-var recommendations = [repoA, repoB];
+var repoA = {'html_url': 'https://github.com/some/repo', 'name': 'some/repo', 'language': 'JavaScript'};
+var repoB = {'html_url': 'https://github.com/other/repo', 'name': 'other/repo', 'language': 'Go'};
+var repoList = [repoA, repoB];
 
 describe('renderer', function () {
 
@@ -23,7 +23,7 @@ describe('renderer', function () {
 
     describe('#renderRepositoryList', function () {
         it('should render list of recommendations as ul of repos', function (done) {
-            var data = recommendations;
+            var data = repoList;
             var output = renderer.renderRepositoryList(data);
             expect(output).to.eql('<li>' +
                     '<a href="https://github.com/some/repo">some/repo</a>' +
@@ -35,4 +35,13 @@ describe('renderer', function () {
             done();
         });
     });
+
+    describe('#renderUserData', function () {
+        it('should render number of repositories and languages used', function (done) {
+            var data = repoList;
+            var output = renderer.renderUserData(data);
+            expect(output).to.eql('Repositories: 2; Languages Used: JavaScript, Go');
+            done();
+        })
+    })
 });

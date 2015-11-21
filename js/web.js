@@ -16,16 +16,22 @@ var data = require('./data.js');
 var locator = require('./locator.js');
 var renderer = require('./renderer/web.js');
 var ui = require('./userinterface/web.js');
+var engine = require('./engine.js');
 
 locator.initialize({
-    'ui': ui.bootstrap(
+    ui: ui.bootstrap(
         document,
         'username',
         'go',
         'suggested-repositories',
+        'user-data',
+        'errors',
         renderer
     ),
-    'dataSource': data
+    dataSource: data,
+    searchEngine: engine
 });
 
 var app = application.start(locator);
+
+window.app = app;

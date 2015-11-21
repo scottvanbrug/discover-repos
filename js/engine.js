@@ -14,6 +14,12 @@ function getLanguageQueryForRepository(repo) {
     return 'language:' + repo.language;
 }
 
+/**
+ * Get search params based on a set of repositories.
+ *
+ * @param {array} repositories
+ * @return {Object}
+ */
 exports.getRecommendationParams = function (repositories) {
     var params = {};
     if (repositories.length) {
