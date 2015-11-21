@@ -20,7 +20,7 @@ module.exports = function (grunt) {
         },
         browserify: {
             main: {
-                src: ['js/**/*.js', '!js/**/*Test.js'],
+                src: ['js/web.js'],
                 dest: 'media/js/main.js'
             }
         },
@@ -30,5 +30,5 @@ module.exports = function (grunt) {
         }
     });
 
-    grunt.registerTask('default', ['eslint']);
+    grunt.registerTask('default', ['eslint', 'mochaTest']);
 };
