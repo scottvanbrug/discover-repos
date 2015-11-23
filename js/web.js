@@ -6,32 +6,20 @@
  */
 'use strict';
 
-// Ideally, the bootstrapping shouldn't need to know how the
-// application fits together, just what needs to be provided
-// to bootstrap it for the specific context - in this case, a
-// web app. Should be primarilly concerned with configuring
-// the service locator and starting the application.
-var application = require('./application.js');
-var data = require('./data.js');
-var locator = require('./locator.js');
-var renderer = require('./renderer/web.js');
+var Application = require('./application.js');
+var data = require('./data/github.js');
 var ui = require('./userinterface/web.js');
-var engine = require('./engine.js');
 
-locator.initialize({
-    ui: ui.bootstrap(
-        document,
+var app = new Application(
+    ui.bootstrap(
+        window.document,
         'username',
         'go',
         'suggested-repositories',
         'user-data',
-        'errors',
-        renderer
+        'errors'
     ),
-    dataSource: data,
-    searchEngine: engine
-});
+    data
+);
 
-var app = application.start(locator);
-
-window.app = app;
+app.start();

@@ -13,7 +13,7 @@ module.exports = function (grunt) {
                     reporter: 'spec',
                     captureFile: 'results.txt',
                     quite: false,
-                    clearRequireCache: false
+                    clearRequireCache: true
                 },
                 src: ['js/**/*Test.js']
             },
@@ -24,9 +24,25 @@ module.exports = function (grunt) {
                 dest: 'media/js/main.js'
             }
         },
+        concat: {
+            main: {
+                src: ['css/reset.css', 'css/main.css'],
+                dest: 'media/css/main.css'
+            }
+        },
         watch: {
-            files: 'js/**/*.js',
-            tasks: ['browserify']
+            buildjs: {
+                files: 'js/**/*.js',
+                tasks: ['browserify']
+            },
+            buildcss: {
+                files: 'css/*.css',
+                tasks: ['concat']
+            },
+            test: {
+                files: 'js/**/*.js',
+                tasks: ['default']
+            }
         }
     });
 

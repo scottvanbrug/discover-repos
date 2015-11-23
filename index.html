@@ -3,19 +3,18 @@
     <head>
         <meta charset="utf-8">
         <title>Discover Github Projects</title>
-        <link rel="stylesheet" type="text/css" href="media/css/master.css">
-        <script src="media/js/main.js"></script>
+        <link rel="stylesheet" type="text/css" href="media/css/main.css">
     </head>
     <body>
         <h1>Discover Github Projects</h1>
-
-        <form method="get" action="">
+        <p id="errors"></p>
+        <form method="GET">
             <label for="username">Github User Name:</label>
             <input name="username" id="username"/>
             <button id="go">Go</button>
         </form>
-        <p id="errors"></p>
         <p id="user-data"></p>
         <ul id="suggested-repositories"></ul>
     </body>
+    <script src="media/js/main.js"></script>
 </html>

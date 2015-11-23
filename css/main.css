@@ -1,0 +1,46 @@
+body {
+    font-family: sans-serif;
+    font-size: 14px;
+    line-height: 28px;
+}
+
+h1 {
+    font-size: 2em;
+    margin-top: 1em;
+}
+
+body > * {
+    padding: 0 14px;
+}
+
+body * + * {
+    margin-top: 14px;
+}
+
+#errors {
+    color: #800;
+    background-color: #faa;
+}
+
+#user-data {
+    background-color: #afa;
+    color: #080;
+}
+ul {
+    padding: 0;
+}
+
+ul > li {
+    padding: 0 14px;
+    background-color: #eee;
+    color: #222;
+}
+
+a {
+    color: #222;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #080;
+}

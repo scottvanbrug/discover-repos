@@ -3,6 +3,7 @@
  */
 'use strict';
 
+var filterRepoLanguages = require('../lib/filterRepoLanguages.js');
 var util = require('util');
 
 /**
@@ -27,20 +28,27 @@ var renderRepositoryList = function (repositories) {
  * @returns {string}
  */
 var renderRepository = function (repository) {
-    return util.format('<a href="%s">%s</a>', repository.html_url, repository.name);
+    return util.format(
+        '<a href="%s">%s (%d stars and %d forks). Primary language: %s</a>',
+        repository.html_url,
+        repository.name,
+        repository.stargazers_count,
+        repository.forks,
+        repository.language
+    );
 };
 
 /**
  * Render data about a user's repositories.
  *
  * @param {array} repositories
- * @return {string}
+ * @returns {string}
  */
 var renderUserData = function (repositories) {
     return util.format(
-        'Repositories: %d; Languages Used: %s',
+        'Loading recommendations based on: repositories - %d and languages - %s',
         repositories.length,
-        repositories.map(function (repo) { return repo.language; }).join(', ')
+        filterRepoLanguages(repositories).join(', ')
     );
 };
 
