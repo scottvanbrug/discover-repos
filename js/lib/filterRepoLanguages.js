@@ -1,5 +1,5 @@
 /**
- * lib/filterReposLanguages.js
+ * lib/filterRepoLanguages.js
  */
 module.exports = function filterRepoLanguages(arr) {
     // As everything in arr will be a string, can use an
