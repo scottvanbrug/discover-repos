@@ -7,8 +7,8 @@
 var expect = require('expect.js');
 var renderer = require('./web.js');
 
-var repoA = {'html_url': 'https://github.com/some/repo', 'name': 'some/repo', 'language': 'JavaScript', 'stargazers_count': 100, 'forks': 100, 'language': 'JavaScript'};
-var repoB = {'html_url': 'https://github.com/other/repo', 'name': 'other/repo', 'language': 'Go', 'stargazers_count': 90, 'forks': 30, 'language': 'Go'};
+var repoA = {'html_url': 'https://github.com/some/repo', 'name': 'some/repo', 'language': 'JavaScript', 'stargazers_count': 100, 'forks': 100};
+var repoB = {'html_url': 'https://github.com/other/repo', 'name': 'other/repo', 'language': 'Go', 'stargazers_count': 90, 'forks': 30,};
 var repoList = [repoA, repoB];
 
 describe('renderer', function () {
