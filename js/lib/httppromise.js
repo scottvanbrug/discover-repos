@@ -4,6 +4,7 @@
  *
  * Largely ripped from http://www.html5rocks.com/en/tutorials/es6/promises/
  */
+'use strict';
 
 https = require('https');
 

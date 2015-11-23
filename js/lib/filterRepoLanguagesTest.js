@@ -2,6 +2,7 @@
  * lib/filterRepoLanguagesTest.js
  * tests for lib/filterRepoLanguages.js
  */
+'use strict';
 
 var expect = require('expect.js');
 var filter = require('./filterRepoLanguages.js');

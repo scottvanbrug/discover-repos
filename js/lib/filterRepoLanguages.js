@@ -1,6 +1,8 @@
 /**
  * lib/filterRepoLanguages.js
  */
+'use strict';
+
 module.exports = function filterRepoLanguages(arr) {
     // As everything in arr will be a string, can use an
     // object to store seen values for faster lookups while

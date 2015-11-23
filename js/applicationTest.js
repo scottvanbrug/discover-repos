@@ -1,6 +1,7 @@
 /**
  * applicationTest.js
  */
+'use strict';
 
 var expect = require('expect.js');
 var Application = require('./application.js');

@@ -3,6 +3,8 @@
  */
 'use strict';
 
+var networkErrorMessage = 'Could not get recommendations.';
+
 function Application (ui, dataProvider) {
     this.ui = ui;
     this.dataProvider = dataProvider;
@@ -31,7 +33,7 @@ Application.prototype.respondToSearchData = function (searchResults) {
     return searchResults;
 };
 Application.prototype.handleErrors = function (errorData) {
-    this.ui.showError('Could no get recommendations.');
+    this.ui.showError(networkErrorMessage);
     return errorData;
 };
 Application.prototype.start = function () {

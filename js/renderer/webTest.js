@@ -2,6 +2,7 @@
  * webTest.js
  * Test for the web renderer.
  */
+'use strict';
 
 var expect = require('expect.js');
 var renderer = require('./web.js');

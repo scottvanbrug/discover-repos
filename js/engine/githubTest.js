@@ -2,6 +2,7 @@
  * engineTest.js
  * tests for the recommendation engine
  */
+'use strict';
 
 var engine = require('./github.js');
 var expect = require('expect.js');

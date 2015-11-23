@@ -3,6 +3,7 @@
  * The thing that takes repositories and returns
  * params to use in searching for recommendations.
  */
+'use strict';
 
 var filterRepoLanguages = require('../lib/filterRepoLanguages.js');
 
