@@ -1,5 +1,5 @@
 {
-  "name": "js-interview-cake",
+  "name": "discover-repos",
   "version": "0.1.0",
   "devDependencies": {
     "browserify": "^12.0.1",
